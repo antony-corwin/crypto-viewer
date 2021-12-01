@@ -1,0 +1,42 @@
+<div class="card container surface-0">
+  <div class="grid card-container">
+
+<!--    <p-autoComplete [(ngModel)]="" [suggestions]="symbols"-->
+<!--                    (completeMethod)="filterSymbols($event)" field="name" [dropdown]="true">-->
+<!--      <ng-template let-symbol pTemplate="item">-->
+<!--        <div class="country-item">-->
+<!--          <div>{{symbol.symbol_id_exchange}}</div>-->
+<!--        </div>-->
+<!--      </ng-template>-->
+<!--    </p-autoComplete>-->
+
+    <p-autoComplete [(ngModel)]="selectedSymbol" [showEmptyMessage]="true"
+                    [suggestions]="filteredSymbols"
+                    (completeMethod)="filterSymbols($event)" field="name" [minLength]="1"></p-autoComplete>
+
+    <p-button label="subscribe" styleClass="p-button-sm"></p-button>
+
+<!--    {{filteredSymbols | json}}-->
+<!--    <p style="color: #fff">{{symbols  | json}}</p>-->
+
+  </div>
+
+
+
+  <div class="flex flex-row justify-content-between">
+    <div class="flex flex-column " style="color: #fff">
+      <div>Symbol:</div>
+<!--      <div>{{symbol | uppercase}}</div>-->
+    </div>
+    <div class="flex flex-column" style="color: #fff">
+      <div>Price:</div>
+<!--      <div>{{price | currency}}</div>-->
+    </div>
+    <div class="flex flex-column" style="color: #fff">
+      <div>Time:</div>
+<!--      <div>{{time | date}}</div>-->
+    </div>
+  </div>
+</div>
+
+<app-charting-data></app-charting-data>
